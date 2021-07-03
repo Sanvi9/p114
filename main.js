@@ -1,3 +1,9 @@
+noseX = 0;
+noseY = 0;
+function preload() {
+    img = loadImage("https://i.postimg.cc/9FTQN32f/clownnose.png")
+}
+
 function setup() {
     canvas = createCanvas(300,300);
     canvas.center();
@@ -23,4 +29,11 @@ function takeSnapshot() {
 
 function draw() {
     image(video,0,0,300,300);
+}
+
+function draw() {
+    image(video,0,0,300,300);
+    //fill("red")
+    //circle(noseX,noseY,25);
+    image(img,noseX -10,noseY,25,25)
 }
