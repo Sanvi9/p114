@@ -1,9 +1,9 @@
-noseX = 0;
-noseY = 0;
+;
+leftEarX = 0;
+leftEarY = 0;
 function preload() {
-    img = loadImage("https://i.postimg.cc/9FTQN32f/clownnose.png")
+    img1 = loadImage("https://i.postimg.cc/43YPMV1Z/crown-png-3128413.png")
 }
-
 function setup() {
     canvas = createCanvas(300,300);
     canvas.center();
@@ -21,6 +21,9 @@ function modelLoaded() {
 function gotPoses(results) {
     if (results.length>0) {
         console.log(results);
+        leftEarX = results[0].pose.rightEar.x;
+        leftEarY = results[0].pose.rightEar.y;
+
 ;    }
 }
 function takeSnapshot() {
@@ -29,11 +32,8 @@ function takeSnapshot() {
 
 function draw() {
     image(video,0,0,300,300);
-}
-
-function draw() {
-    image(video,0,0,300,300);
     //fill("red")
     //circle(noseX,noseY,25);
     image(img,noseX -10,noseY,25,25)
+    image(img1,leftEarX,leftEarY -150,130,90)
 }
